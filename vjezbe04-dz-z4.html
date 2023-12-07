@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+ <meta charset="UTF-8" />
+ <title>Manipulacija poljem</title>
+</head>
+<body>
+ <script type="text/javascript">
+ <!--
+ var polje = new Array(1,2,3,4,7,8,5,6,9,55,12,4,85);
+
+ // a. Ispis dužine inicijalnog polja
+ console.log("Inicijalna dužina polja: " + polje.length);
+
+ // b. Ispis sortiranog polja od najvećeg ka najmanjem
+ var sortiranoNajveciNajmanji = polje.slice().sort(function(a, b) {
+     return b - a;
+ });
+ console.log("Sortirano od najvećeg ka najmanjem: " + sortiranoNajveciNajmanji);
+
+ // c. Ispis sortiranog polja od najmanjeg ka najvećem
+ var sortiranoNajmanjiNajveci = polje.slice().sort(function(a, b) {
+     return a - b;
+ });
+ console.log("Sortirano od najmanjeg ka najvećem: " + sortiranoNajmanjiNajveci);
+
+ // d. Uklanjanje zadnjeg člana iz sortiranog polja od najmanjeg ka najvećem
+ sortiranoNajmanjiNajveci.pop();
+ console.log("Uklonjen zadnji član iz sortiranog polja: " + sortiranoNajmanjiNajveci);
+
+ // e. Dodavanje novih članova na kraj polja
+ sortiranoNajmanjiNajveci.push(19, 22);
+ console.log("Dodani novi članovi: " + sortiranoNajmanjiNajveci);
+
+ // f. Definiranje novog polja i spajanje polja u novo polje
+ var polje2 = ["Banana", "Orange", "Apple", "Mango"];
+ var polje_final = polje.concat(polje2);
+ console.log("Spojeno polje: " + polje_final);
+ -->
+ </script>
+</body>
+</html>

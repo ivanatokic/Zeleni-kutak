@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Izračun godina</title>
+  <script>
+    function izracunajGodine() {
+      var dan = parseInt(document.getElementById("dan").value);
+      var mjesec = parseInt(document.getElementById("mjesec").value);
+      var godina = parseInt(document.getElementById("godina").value);
+      
+      var uneseniDatum = new Date(godina, mjesec - 1, dan);
+      var trenutniDatum = new Date();
+      
+      var razlika = trenutniDatum.getTime() - uneseniDatum.getTime();
+      var razlikaGodina = new Date(razlika);
+      
+      var godine = Math.abs(razlikaGodina.getUTCFullYear() - 1970);
+
+      alert("Imate " + godine + " godina.");
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <label for="dan">Unesite dan (1-31):</label>
+    <input type="text" id="dan" name="dan" pattern="[0-9]{1,2}" title="Unesite broj od 1 do 31">
+    <br>
+    <label for="mjesec">Unesite mjesec (1-12):</label>
+    <input type="text" id="mjesec" name="mjesec" pattern="[0-9]{1,2}" title="Unesite broj od 1 do 12">
+    <br>
+    <label for="godina">Upišite godinu (npr. 1979):</label>
+    <input type="text" id="godina" name="godina" pattern="[0-9]{4}" title="Unesite četveroznamenkasti broj">
+    <br>
+    <button type="button" onclick="izracunajGodine()">Izračunajte</button>
+  </form>
+</body>
+</html>
+

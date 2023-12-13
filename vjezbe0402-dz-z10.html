@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dodavanje paragrafa</title>
+  <script>
+    function dodajNoviParagraf() {
+      var noviParagraf = document.createElement("p");
+      var tekst = document.createTextNode("Ovo je novi paragraf teksta");
+      noviParagraf.appendChild(tekst);
+
+      var defaultniParagraf = document.getElementsByTagName("p")[2]; // Indeks 2 jer je defaultni paragraf treći u dokumentu
+      defaultniParagraf.parentNode.insertBefore(noviParagraf, defaultniParagraf.nextSibling);
+    }
+  </script>
+</head>
+<body>
+  <p><a href="#" onclick="dodajNoviParagraf()">Kliknite ovdje da dodate novi paragraf teksta</a></p>
+  <p id="thisLocation">Novi paragrafi teksta će se pojaviti ispod</p>
+  <p>Ovo je defaultni prvi paragraf teksta</p>
+</body>
+</html>

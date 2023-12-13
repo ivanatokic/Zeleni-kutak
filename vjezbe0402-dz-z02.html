@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promijeni pozadinu</title>
+  <script>
+    function promijeniBoju() {
+      var boje = ['#FF5733', '#FFC300', '#4CAF50', '#3498DB', '#9B59B6', '#ECF0F1', '#000000', '#FFFFFF'];
+      var randomIndex = Math.floor(Math.random() * boje.length);
+      var novaBoja = boje[randomIndex];
+
+      document.body.style.backgroundColor = novaBoja;
+      document.getElementById("trenutnaBoja").innerText = "Trenutna boja: " + novaBoja;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="promijeniBoju()">Promijeni pozadinu</button>
+  <p id="trenutnaBoja"></p>
+</body>
+</html>

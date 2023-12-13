@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ocjena</title>
+  <script>
+    function provjeriOcjenu() {
+      var ocjena = document.getElementById("ocjena").value;
+      var opisOcjene = document.getElementById("opisOcjene");
+
+      switch (parseInt(ocjena)) {
+        case 1:
+          opisOcjene.innerText = "Ocjena 1 - Nedovoljan";
+          break;
+        case 2:
+          opisOcjene.innerText = "Ocjena 2 - Dovoljan";
+          break;
+        case 3:
+          opisOcjene.innerText = "Ocjena 3 - Dobar";
+          break;
+        case 4:
+          opisOcjene.innerText = "Ocjena 4 - Vrlo dobar";
+          break;
+        case 5:
+          opisOcjene.innerText = "Ocjena 5 - Odličan";
+          break;
+        default:
+          opisOcjene.innerText = "Molimo unesite ocjenu između 1 i 5.";
+          break;
+      }
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <label for="ocjena">Unesite ocjenu (1-5):</label>
+    <input type="text" id="ocjena" name="ocjena">
+    <button type="button" onclick="provjeriOcjenu()">Provjeri ocjenu</button>
+  </form>
+  <p id="opisOcjene"></p>
+</body>
+</html>

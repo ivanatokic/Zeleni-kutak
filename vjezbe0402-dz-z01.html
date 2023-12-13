@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <script>
+    function calculate() {
+      var numbersString = prompt("Unesite brojeve odvojene zarezom:");
+      var numbersArray = numbersString.split(",").map(Number);
+
+      var sum = 0;
+      var rezultat = 1;
+
+      for (var i = 0; i < numbersArray.length; i++) {
+        sum += numbersArray[i];
+        rezultat *= numbersArray[i];
+      }
+
+      var aritmetickaSredina = sum / numbersArray.length;
+
+      var geometrijskaSredina = Math.pow(rezultat, 1 / numbersArray.length);
+
+      document.getElementById("result").innerHTML = "Aritmeticka sredina: " + aritmetickaSredina.toFixed(2) + "<br>Geometrijska sredina: " + geometrijskaSredina.toFixed(2);
+    }
+  </script>
+</head>
+<body onload="calculate()">
+  <h1>Izračunavanje aritmetičke i geometrijske sredine</h1>
+  <div id="result"></div>
+</body>
+</html>
